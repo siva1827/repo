@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.outer{
+    margin: 40px;
+}
+
+#greet{
+    margin-top: 15px;
+}
+
+#myt{
+    margin-top: 30px;
+}
+th{
+    padding: 10px;
+    text-align: left;
+    color: chocolate;
+}
+td{
+    padding: 10px;
+}
+
+tr:nth-child(even){
+    background-color: #D6EEEE;
+}
+#t{
+    margin-top: 30px;
+}
+
+#ch{
+    color: chocolate;
+}
+
+#home{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 40px 60px;
+    text-decoration: none;
+    color: white;
+    background-color: chocolate;
+    padding: 7px 10px;
+    border-radius: 5px;
+
+}

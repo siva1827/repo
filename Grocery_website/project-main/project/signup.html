@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="left">
+        
+            <form id="signup">
+                <h3 class="heading">SIGN UP</h3>
+                <div class="field">
+                    <label for="">Full Name</label>   
+                    <input type="text" id="n">
+                </div>
+                <div class="field">
+                    <label for="">Email/Username</label>
+                    <input type="text" id="un">
+                </div>
+                <div class="field">
+                    <label for="">Password</label>
+                    <input type="password" name="ps" id="ps">
+                </div>
+                <div class="field">
+                    <label for="">Phone Number</label>
+                    <input type="text" id="pno">
+                </div>
+                <div class="field">
+                    <label for="">What is your favourite color</label>
+                    <input type="text" id="color">
+                </div>
+                <div class="field">
+                    <input type="button" value="Submit" id="submit" onclick="save()">
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <a href="./login.html" class="navi">Login</a>
+        </div>
+    
+        <script>
+            function save(){
+                var n = document.getElementById("n").value;
+                var un = document.getElementById("un").value;
+                var ps = document.getElementById("ps").value;
+                var pno = document.getElementById("pno").value;
+                var color = document.getElementById("color").value;
+                var a = []
+                var f=0;
+                var arr = [n,un,ps,pno,color];
+                if(!localStorage.names){
+                    f=1;
+                    a.push(arr);
+                    localStorage.setItem("names",JSON.stringify(a));
+                    window.location.href = "login.html"
+                }
+                if(f==0){
+                    var che = JSON.parse(localStorage.getItem("names"));
+                    for(var i=0;i<che.length;i++){
+                        console.log(che[i][0]);
+                        if(che[i][1]==un){
+                            window.alert("username already exist");
+                            f=1;
+                            break;
+                        }
+                    }
+                }
+                if(f==0){
+                        var a = JSON.parse(localStorage.getItem("names"));
+                        a.push(arr);
+                        localStorage.setItem("names",JSON.stringify(a));
+                        window.location.href = "login.html"
+                }
+                // for(var i=0;i<che.length;i++){
+                //     var che = JSON.parse(localStorage.getItem("names"));
+                //     if(che[i][1]==un){
+                //         localStorage.setItem("curuser",i);
+                //         break;
+                //     }
+                // }
+            }
+
+        </script>
+</body>
+</html>

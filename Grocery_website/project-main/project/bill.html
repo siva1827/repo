@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bill.css">
+    <title>Cart</title>
+</head>
+<body>
+    <input type="button"  id="home" onclick="history.back()" value="BACK"></input>
+    <div class="outer">
+        <h3 id="ch">CART</h3>
+        <h4 id="greet">Hello</h4>
+        <table id="myt" >
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+            </tr>
+        </table>
+        <h3 id="t">Total : </h3>
+    </div>
+
+    <script>
+        var curuser = localStorage.getItem("curuser");
+        var data = JSON.parse(localStorage.getItem("names"))[curuser][0]
+        document.getElementById("greet").innerHTML = "Hello "+data + " :)";
+
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        var arr = [];
+        for(var i=0;i<cart.length;i++){
+            if(cart[i][0] == curuser){
+                arr = cart[i];
+                break;
+            }
+        }
+        console.log(arr);
+
+        var pro = ["hi","Tomato","Bottle Gourd","Capsicum","Carrot"]
+        var pri = [0,40,55,45,75];
+        var noOfRows = 1;
+        var total = 0;
+        for(var i=1;i<arr.length;i++){
+            var qty = parseInt(arr[i])
+            if(qty>0){
+                table = document.getElementById("myt");
+                row = table.insertRow(noOfRows)
+                prod = row.insertCell(0)
+                pric = row.insertCell(1)
+                qnty = row.insertCell(2)
+                totl = row.insertCell(3)
+                prod.innerHTML = pro[i];
+                pric.innerHTML = pri[i];
+                qnty.innerHTML = qty;
+                var price = pri[i]*qty
+                totl.innerHTML = price;
+                total+=price
+            }
+        }
+
+        document.getElementById("t").innerHTML = "Total : "+total;
+        
+    </script>
+</body>
+</html>

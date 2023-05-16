@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#header{
+    /* color: chocolate; */
+    margin-left: 5%;
+    display: flex;
+}
+#curuser{
+    margin-left: 10PX;
+}
+
+#ppto{
+    margin-top: 10px;
+    margin-left: 5%;
+    /* color: chocolate; */
+}
+
+#outer{
+    margin: 50px 30px;
+}
+
+.card{
+    padding: 15px;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro{
+    margin-top: 20px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;    
+}
+.pri{
+    margin-top: 10px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;    
+}
+.qty{
+    margin-top: 10px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+}
+.qty input{
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: chocolate;
+}
+
+.image{
+    width: 80%;
+}
+
+.cards{
+    margin-top: 50px;
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#ac{
+    padding: 10px 15px;
+    /* background-color: chocolate;
+    color: white;
+    border: none;
+    border-radius: 5px; */
+}
+
+#cc{
+    margin-left: 20px;
+    padding: 10px 15px;
+    /* background-color: chocolate;
+    color: white;
+    border: none;
+    border-radius: 5px; */
+}
+
+.foot{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin-top: 60px;
+    margin-left: 5%;
+}

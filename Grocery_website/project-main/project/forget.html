@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link rel="stylesheet" href="forget.css">
+</head>
+<body>
+    <div class="left">
+        
+        <form id="signup">
+            <h3 class="heading">Forget Password</h3>
+            <div class="field">
+                <label for="">UserName</label>
+                <p id="curname"></p>
+            </div>
+            <div class="field">
+                <label for="">New Password</label>
+                <input type="password" id="np">
+            </div>
+            <div class="field">
+                <label for="">Confirm Password</label>
+                <input type="password" name="ps" id="cp">
+            </div>
+            <div class="field">
+                <input type="button" value="Submit" id="submit" onclick="save()">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var curuser = parseInt(localStorage.getItem("curuser"));
+        var upd = JSON.parse(localStorage.getItem("names"));
+        document.getElementById("curname").innerHTML = upd[curuser][1]
+        function save(){
+            var np = document.getElementById("np").value;
+            var cp = document.getElementById("cp").value;
+            if(np==cp){
+                upd[curuser][2] = np;
+                console.log(upd);
+                localStorage.setItem("names",JSON.stringify(upd));
+                window.location.href = "login.html"
+            }
+            else{
+                window.alert("Password doesn't match");
+            }
+        }
+    </script>
+</body>
+</html>
